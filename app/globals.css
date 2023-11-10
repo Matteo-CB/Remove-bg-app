@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html{
+  scroll-behavior: smooth;
+
+}
+@font-face {
+  font-family: "League Spartan";
+  src: url("./LeagueSpartan-VariableFont_wght.ttf");
+}
+.hover-neutral-to-sky {
+  @apply font-semibold text-neutral-600 hover:text-sky-500 transition duration-150 ease-in-out;
+}
+*{
+  font-family: "League Spartan";
+}
+*::selection {
+  @apply bg-neutral-200 text-sky-500;
+}
+
+.titleSection{
+  @apply text-4xl font-bold text-gray-900   mt-10 mb-10
+}
