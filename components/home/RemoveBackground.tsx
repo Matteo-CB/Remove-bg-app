@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import imglyRemoveBackground from "@imgly/background-removal";
 import { HiDownload } from "react-icons/hi";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 const RemoveBackground = () => {
   const [blob, setBlob] = useState("");
   const [loading, setLoading] = useState(false);
+  
   return (
     <>
       <div className="flex items-center lg:items-start lg:justify-start justify-center mt-4">
@@ -23,6 +24,11 @@ const RemoveBackground = () => {
           </label>
         ) : (
           <div className="lg:w-[600px] sm:w-[400px] w-[300px] relative h-[250px] flex items-center justify-center  border-2 border-dashed border-neutral-400">
+            {loading && (
+              <div className="absolute flex items-center justify-center bg-neutral-600 opacity-50 top-0 left-0 right-0 bottom-0">
+                <div className="absolute border-4 rounded-full border-neutral-950 border-b-neutral-100  rotateanim w-[50px] h-[50px] "></div>
+              </div>
+            )}
             <RiDeleteBinLine
               className="absolute top-2 right-2 z-10 text-red-500 cursor-pointer"
               onClick={() => {
