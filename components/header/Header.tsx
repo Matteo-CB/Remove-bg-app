@@ -20,9 +20,9 @@ const Header = () => {
       <nav>
         <ul className=" gap-6 items-center hidden md:flex">
           {nav.map((item, index) => (
-            <Link href={item.link}>
+            <Link key={index} href={item.link}>
               <li
-                key={index}
+                
                 className="hover-neutral-to-sky text-sm lg:text-md"
               >
                 {item.name}
