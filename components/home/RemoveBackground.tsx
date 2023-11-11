@@ -11,24 +11,24 @@ const RemoveBackground = () => {
   const [loading, setLoading] = useState(false);
   return (
     <>
-      <div className=" mt-4">
+      <div className="flex items-center lg:items-start lg:justify-start justify-center mt-4">
         {!blob ? (
           <label
             htmlFor="file"
-            className="w-[600px] relative h-[250px] flex items-center justify-center  border-2 border-dashed border-neutral-400 cursor-pointer"
+            className="lg:w-[600px] sm:w-[400px] w-[300px] relative h-[250px] flex items-center justify-center  border-2 border-dashed border-neutral-400 cursor-pointer"
           >
             <span className="flex items-center text-neutral-600">
               Uploadez votre image <HiDownload className="w-[20px] ml-2" />
             </span>
           </label>
         ) : (
-          <div className="w-[600px] relative h-[250px] flex items-center justify-center  border-2 border-dashed border-neutral-400">
+          <div className="lg:w-[600px] sm:w-[400px] w-[300px] relative h-[250px] flex items-center justify-center  border-2 border-dashed border-neutral-400">
             <RiDeleteBinLine
               className="absolute top-2 right-2 z-10 text-red-500 cursor-pointer"
               onClick={() => {
                 // setBlob("");
-                  // setLoading(false);
-                  window.location.reload();
+                // setLoading(false);
+                window.location.reload();
               }}
             />
             <Image
@@ -58,12 +58,12 @@ const RemoveBackground = () => {
           });
         }}
       />
-      <div className="flex items-center justify-start gap-4 mt-4">
+      <div className="flex flex-col-reverse items-center lg:flex-row justify-start gap-4 mt-4">
         {blob && !loading ? (
           <a
             href={blob}
             download="image.png"
-            className="bg-sky-500 hover:bg-sky-600 text-neutral-100 px-4 py-2 rounded hover:scale-105 ease-in-out transition-all"
+            className="bg-sky-500 shadow-lg hover:shadow-2xl hover:bg-sky-600 text-neutral-100 px-4 py-2 rounded hover:scale-105 ease-in-out transition-all"
           >
             Télécharger
           </a>
@@ -73,7 +73,7 @@ const RemoveBackground = () => {
           </p>
         )}
         {!loading ? (
-          <label className="flex items-center p-2 px-4 py-2 rounded hover:scale-105 ease-in-out transition-all border border-neutral-950">
+          <label className="flex items-center p-2 px-4 py-2 rounded hover:scale-105 ease-in-out transition-all border shadow-lg hover:shadow-2xl border-neutral-950">
             Choisissez une image <HiDownload className="w-[20px] ml-2" />
             <input
               type="file"

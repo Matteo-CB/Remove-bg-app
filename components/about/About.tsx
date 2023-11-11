@@ -1,14 +1,15 @@
 import React from "react";
 import SectionAnimation from "../home/SectionAnimation";
-import { nav } from "@/lib/data";
+import { cardHomeHeaderData, nav } from "@/lib/data";
 import { Button } from "../ui/button";
+import CardHomeHeader from "./CardHomeHeader";
 
 const About = () => {
   return (
     <SectionAnimation whileInView={true} id={nav[1].id}>
-      <div className="flex items-center gap-10">
-        <h2 className="titleSection">À propos de nous</h2>
-        <Button className="bg-sky-500 text-neutral-100 hover:bg-sky-600 hover:scale-105 transition rounded">
+      <div className="flex flex-col md:flex-row justify-center items-center md:gap-10">
+        <h2 className="titleSection ">À propos de nous</h2>
+        <Button className="bg-sky-500 shadow-lg hover:shadow-2xl text-neutral-100 hover:bg-sky-600 hover:scale-105 transition rounded hidden md:block">
           <a href="https://dlkdigitalagency.com" target="_blank">
             Visiter notre site
           </a>
@@ -24,8 +25,8 @@ const About = () => {
           >
             DLK Digital Agency
           </a>{" "}
-          est une agence de création de sites web moderne. Nous nous efforçons de fournir des
-          solutions web hautement efficaces et personnalisées.
+          est une agence de création de sites web moderne. Nous nous efforçons
+          de fournir des solutions web hautement efficaces et personnalisées.
         </p>
         <p>
           Nous proposons des offres comme site vitrine, e-commerce, blogs, vente
@@ -42,10 +43,26 @@ const About = () => {
           ligne.
         </p>
         <p>
-          DLK Digital Agency est votre partenaire de confiance pour une présence
-          en ligne réussie. Notre engagement envers l'innovation, l'excellence
-          et le service client est notre promesse à vous.
+          Si vous souhaitez améliorer votre visibilité et votre crédibilité en
+          ligne{" "}
+          <a href="#contact" className="underline text-sky-500">
+            contactez-nous
+          </a>{" "}
+          dès maintenant !
         </p>
+        <div className="items-center flex flex-wrap gap-3 text-center justify-center py-6">
+          {cardHomeHeaderData.map((item, index) => {
+            return (
+              <CardHomeHeader
+                key={index}
+                text={item.text}
+                icon={item.icon}
+                title={item.title}
+                href={item.href}
+              />
+            );
+          })}
+        </div>
       </div>
     </SectionAnimation>
   );

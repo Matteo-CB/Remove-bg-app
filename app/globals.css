@@ -20,5 +20,15 @@ html{
 }
 
 .titleSection{
-  @apply text-4xl font-bold text-gray-900   mt-10 mb-10
+  @apply lg:text-4xl md:text-2xl text-xl font-bold text-gray-900   mt-10 mb-10
+}
+#hamburgerInput:checked + .toggle #l1 {
+  transform: rotate(60deg);
+}
+#hamburgerInput:checked + .toggle #l3 {
+  opacity: 0;
+  transform: translateX(-50%);
+}
+#hamburgerInput:checked + .toggle #l2 {
+  transform: rotate(120deg);
 }

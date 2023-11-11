@@ -14,12 +14,12 @@ import SectionAnimation from "./SectionAnimation";
 const HomePage: any = () => {
   return (
     <SectionAnimation id={nav[0].id} whileInView={false}>
-      <h2 className="titleSection">
-        {titleHome}
-      </h2>
-      <div className="flex justify-between">
-        <div className="w-[60%]">
-          <p className="text-xl text-gray-600 ">{textHome}</p>
+      <h2 className="titleSection">{titleHome}</h2>
+      <div className="flex flex-col gap-6 xl:gap-0 xl:flex-row justify-between">
+        <div className="xl:w-[60%]">
+          <p className="xl:text-xl  text-md md:text-md text-gray-600 ">
+            {textHome}
+          </p>
           <RemoveBackground />
         </div>
         <div className="text-xl  text-gray-900 text-start">
@@ -27,7 +27,7 @@ const HomePage: any = () => {
 
           <ol className="mb-3">
             {tutorial.map((item, index) => (
-              <li key={index} className=" text-gray-600 py-1">
+              <li key={index} className="xl:text-lg  text-md md:text-md text-gray-600 py-1">
                 <span className="text-sky-500">{index + 1 + ". "}</span> {item}
               </li>
             ))}
@@ -41,7 +41,7 @@ const HomePage: any = () => {
             {whyUs.map((item, index) => (
               <li
                 key={index}
-                className="text-gray-600 py-1 flex items-center gap-2"
+                className="xl:text-lg  text-md md:text-md text-gray-600 py-1 flex items-center gap-2"
               >
                 <BiCheckDouble className={"text-sky-500"} />
                 {item}

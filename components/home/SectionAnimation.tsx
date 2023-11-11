@@ -6,25 +6,25 @@ const SectionAnimation = ({ children, whileInView, id }: any) => {
   return (
     <>
       {!whileInView ? (
-        <motion.div
+        <motion.section
           id={id}
-          className="flex flex-col items-start text-start w-[70%] m-auto"
+          className="flex flex-col items-start text-start md:w-[70%] px-4  md:m-auto"
           animate={{ x: 0, opacity: 1 }}
           initial={{ x: -100, opacity: 0 }}
           transition={{ duration: 0.5, type: "spring", bounce: 0.25 }}
         >
           {children}
-        </motion.div>
+        </motion.section>
       ) : (
-        <motion.div
+        <motion.section
           id={id}
-          className="flex flex-col items-start text-start w-[70%] m-auto"
+          className="flex flex-col items-start text-start px-4 md:w-[70%] m-auto"
           whileInView={{ x: 0, opacity: 1 }}
           initial={{ x: -100, opacity: 0 }}
-          transition={{ duration: 0.5, type: "spring", bounce: 0.25, delay: 0.5 }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.25, delay: 0.2 }}
         >
           {children}
-        </motion.div>
+        </motion.section>
       )}
     </>
   );
